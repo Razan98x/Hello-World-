@@ -1,0 +1,726 @@
+/* ألوان DGA الرسمية */
+:root {
+    --dga-primary: #1A5F3F;
+    --dga-primary-light: #2D8659;
+    --dga-primary-dark: #0F4029;
+    --dga-secondary: #F4A522;
+    --dga-secondary-light: #FFB84D;
+    --dga-secondary-dark: #D48A0A;
+    --dga-neutral-900: #1A1A1A;
+    --dga-neutral-800: #2D2D2D;
+    --dga-neutral-700: #4A4A4A;
+    --dga-neutral-600: #6B6B6B;
+    --dga-neutral-500: #8C8C8C;
+    --dga-neutral-400: #ADADAD;
+    --dga-neutral-300: #CFCFCF;
+    --dga-neutral-200: #E8E8E8;
+    --dga-neutral-100: #F5F5F5;
+    --dga-neutral-50: #FAFAFA;
+    --dga-success: #2D8659;
+    --dga-warning: #F4A522;
+    --dga-error: #D32F2F;
+    --dga-info: #1976D2;
+    --bg-primary: #0A0F0D;
+    --bg-secondary: #12191A;
+    --bg-card: #1A2321;
+    --bg-elevated: #1F2D2A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'IBM Plex Sans Arabic', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-primary);
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(26, 95, 63, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(45, 134, 89, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(244, 165, 34, 0.08) 0%, transparent 50%);
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--dga-neutral-100);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* قسم الهوية الرقمية */
+.digital-id-section {
+    background: linear-gradient(145deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(26, 95, 63, 0.2);
+    border: 1px solid rgba(26, 95, 63, 0.3);
+}
+
+.header {
+    text-align: center;
+    padding: 25px 0;
+    border-bottom: 2px solid var(--dga-primary);
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.dga-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--dga-primary), var(--dga-secondary), var(--dga-primary), transparent);
+}
+
+.header h1 {
+    background: linear-gradient(135deg, var(--dga-primary-light) 0%, var(--dga-secondary) 50%, var(--dga-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 32px;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.header p {
+    color: var(--dga-neutral-400);
+    font-size: 16px;
+}
+
+.id-card {
+    background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    border-radius: 20px;
+    padding: 35px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(26, 95, 63, 0.2);
+    border: 1px solid rgba(26, 95, 63, 0.3);
+}
+
+.id-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(26, 95, 63, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(244, 165, 34, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.id-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(26, 95, 63, 0.05) 50%, transparent 70%);
+    animation: shimmer 8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.id-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.id-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dga-neutral-100);
+}
+
+.logo-icon {
+    font-size: 32px;
+    filter: drop-shadow(0 4px 8px rgba(26, 95, 63, 0.4));
+}
+
+.id-type {
+    background: linear-gradient(135deg, var(--dga-primary) 0%, var(--dga-primary-light) 100%);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(26, 95, 63, 0.4);
+    border: 1px solid rgba(45, 134, 89, 0.3);
+}
+
+.id-content {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.photo-section {
+    text-align: center;
+}
+
+.photo-container {
+    width: 200px;
+    height: 240px;
+    background: linear-gradient(145deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 3px solid var(--dga-primary);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(26, 95, 63, 0.2);
+    position: relative;
+}
+
+.photo-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26, 95, 63, 0.15) 0%, transparent 100%);
+}
+
+.photo-placeholder {
+    font-size: 60px;
+    opacity: 0.5;
+}
+
+.qr-code {
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
+    border-radius: 12px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 5px 20px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(26, 95, 63, 0.1);
+    border: 2px solid var(--dga-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.qr-pattern {
+    width: 80%;
+    height: 80%;
+    background: 
+        linear-gradient(90deg, var(--dga-primary) 2px, transparent 2px),
+        linear-gradient(0deg, var(--dga-primary) 2px, transparent 2px);
+    background-size: 8px 8px;
+    opacity: 0.8;
+}
+
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-item {
+    background: linear-gradient(145deg, rgba(26, 95, 63, 0.15) 0%, rgba(45, 134, 89, 0.1) 100%);
+    padding: 18px;
+    border-radius: 12px;
+    border-right: 3px solid var(--dga-primary);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(26, 95, 63, 0.2);
+}
+
+.info-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(26, 95, 63, 0.3);
+    border-right-color: var(--dga-secondary);
+    background: linear-gradient(145deg, rgba(26, 95, 63, 0.2) 0%, rgba(244, 165, 34, 0.1) 100%);
+}
+
+.info-label {
+    font-size: 12px;
+    color: var(--dga-neutral-400);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.info-value {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--dga-neutral-100);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(26, 95, 63, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--dga-neutral-300);
+    font-size: 14px;
+}
+
+.footer-item .icon {
+    font-size: 18px;
+    color: var(--dga-secondary);
+}
+
+/* قسم المستحقات المالية */
+.financial-section {
+    background: linear-gradient(145deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(26, 95, 63, 0.2);
+    border: 1px solid rgba(26, 95, 63, 0.3);
+}
+
+.financial-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.financial-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.financial-header h2 {
+    background: linear-gradient(135deg, var(--dga-primary-light) 0%, var(--dga-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 28px;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.financial-header p {
+    color: var(--dga-neutral-400);
+    font-size: 15px;
+}
+
+/* إحصائيات */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(26, 95, 63, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(26, 95, 63, 0.3);
+}
+
+.stat-card.highlight {
+    background: linear-gradient(135deg, var(--dga-primary) 0%, var(--dga-primary-light) 100%);
+    border-color: var(--dga-secondary);
+}
+
+.stat-icon {
+    font-size: 36px;
+    filter: drop-shadow(0 4px 8px rgba(26, 95, 63, 0.4));
+}
+
+.stat-info {
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--dga-neutral-400);
+    margin-bottom: 5px;
+}
+
+.stat-card.highlight .stat-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--dga-neutral-100);
+}
+
+.stat-card.highlight .stat-value {
+    color: white;
+}
+
+/* منطقة الرفع */
+.upload-section {
+    margin-bottom: 30px;
+}
+
+.upload-area {
+    background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    border: 3px dashed var(--dga-primary);
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: var(--dga-secondary);
+    background: linear-gradient(145deg, rgba(26, 95, 63, 0.1) 0%, rgba(244, 165, 34, 0.05) 100%);
+    transform: scale(1.02);
+}
+
+.upload-area.dragover {
+    border-color: var(--dga-secondary);
+    background: linear-gradient(145deg, rgba(26, 95, 63, 0.2) 0%, rgba(244, 165, 34, 0.1) 100%);
+}
+
+.upload-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.upload-content h3 {
+    color: var(--dga-neutral-100);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.upload-content p {
+    color: var(--dga-neutral-400);
+    margin-bottom: 20px;
+}
+
+.upload-btn {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, var(--dga-primary) 0%, var(--dga-primary-light) 100%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(26, 95, 63, 0.5);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(26, 95, 63, 0.7);
+    background: linear-gradient(135deg, var(--dga-primary-light) 0%, var(--dga-secondary) 100%);
+}
+
+/* قائمة الفواتير */
+.invoices-container {
+    margin-bottom: 30px;
+}
+
+.invoices-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--dga-primary);
+}
+
+.invoices-header h3 {
+    color: var(--dga-neutral-100);
+    font-size: 22px;
+}
+
+.clear-btn {
+    padding: 10px 25px;
+    background: linear-gradient(135deg, var(--dga-error) 0%, #B71C1C 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.clear-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+}
+
+.invoices-list {
+    display: grid;
+    gap: 15px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--dga-neutral-400);
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.empty-state p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.empty-state small {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.invoice-card {
+    background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    border-radius: 16px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid rgba(26, 95, 63, 0.2);
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.invoice-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(26, 95, 63, 0.3);
+}
+
+.invoice-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid var(--dga-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.invoice-info {
+    flex: 1;
+}
+
+.invoice-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dga-neutral-100);
+    margin-bottom: 8px;
+}
+
+.invoice-details {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.invoice-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.invoice-detail-label {
+    font-size: 11px;
+    color: var(--dga-neutral-400);
+    margin-bottom: 3px;
+}
+
+.invoice-detail-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dga-neutral-100);
+}
+
+.invoice-detail-value.vat {
+    color: var(--dga-secondary);
+}
+
+.invoice-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-btn {
+    padding: 10px 15px;
+    background: linear-gradient(135deg, var(--dga-error) 0%, #B71C1C 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.5);
+}
+
+/* زر التصدير */
+.export-section {
+    text-align: center;
+}
+
+.export-btn {
+    padding: 18px 50px;
+    background: linear-gradient(135deg, var(--dga-secondary) 0%, var(--dga-secondary-light) 100%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(244, 165, 34, 0.5);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.export-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(244, 165, 34, 0.7);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    border: 3px solid rgba(26, 95, 63, 0.2);
+    border-top: 3px solid var(--dga-primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .digital-id-section,
+    .financial-section {
+        padding: 25px;
+    }
+
+    .id-content {
+        grid-template-columns: 1fr;
+    }
+
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .invoice-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .invoice-image {
+        margin: 0 auto;
+    }
+
+    .invoice-details {
+        justify-content: center;
+    }
+
+    .invoice-actions {
+        justify-content: center;
+    }
+}

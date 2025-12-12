@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الهوية الرقمية للزوار - DGA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- قسم الهوية الرقمية -->
+        <div class="digital-id-section">
+            <div class="header">
+                <div class="dga-logo">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                        <rect width="50" height="50" rx="10" fill="url(#gradient1)"/>
+                        <text x="25" y="32" font-size="20" font-weight="bold" text-anchor="middle" fill="white">ابشر</text>
+                        <defs>
+                            <linearGradient id="gradient1" x1="0" y1="0" x2="50" y2="50">
+                                <stop offset="0%" style="stop-color:#1A5F3F;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#2D8659;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h1>🇸🇦 الهوية الرقمية للزوار</h1>
+                <p> المملكة العربية السعودية - ابشر</p>
+            </div>
+
+            <div class="id-card">
+                <div class="id-header">
+                    <div class="id-logo">
+                        <div class="logo-icon"></div>
+                        <span>أبشر</span>
+                    </div>
+                    <div class="id-type">هوية زائر</div>
+                </div>
+
+                <div class="id-content">
+                    <div class="photo-section">
+                        <div class="photo-container">
+                            <div class="photo-placeholder">👤</div>
+                        </div>
+                        <div class="qr-code">
+                            <div class="qr-pattern"></div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="info-item">
+                            <div class="info-label">الاسم الكامل</div>
+                            <div class="info-value">محمد أحمد عبدالله</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">رقم الحدود</div>
+                            <div class="info-value">3023456789</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">تاريخ الميلاد</div>
+                            <div class="info-value">1990/05/15</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">الجنس</div>
+                            <div class="info-value">ذكر</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">رقم الجواز</div>
+                            <div class="info-value">A12345678</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">نوع الجواز</div>
+                            <div class="info-value">عادي</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">مكان الإصدار</div>
+                            <div class="info-value">مدريد</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">رمز الدولة</div>
+                            <div class="info-value">ES 🇪🇸</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">تاريخ الإصدار</div>
+                            <div class="info-value">2024/01/01</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">تاريخ الانتهاء</div>
+                            <div class="info-value">2025/12/31</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="footer-item">
+                        <span class="icon">🔒</span>
+                        <span>محمي رقمياً</span>
+                    </div>
+                    <div class="footer-item">
+                        <span class="icon">✓</span>
+                        <span>موثق</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم المستحقات المالية -->
+        <div class="financial-section">
+            <div class="financial-header">
+                <div class="financial-icon">💰</div>
+                <h2>مستحقاتك المالية</h2>
+                <p>ارفع صورة الفاتورة لاستخراج ضريبة القيمة المضافة تلقائياً</p>
+            </div>
+
+            <!-- إحصائيات المستحقات -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon"></div>
+                    <div class="stat-info">
+                        <div class="stat-label">إجمالي الفواتير</div>
+                        <div class="stat-value" id="totalInvoices">0</div>
+                    </div>
+                </div>
+
+                <div class="stat-card highlight">
+                    <div class="stat-icon"></div>
+                    <div class="stat-info">
+                        <div class="stat-label">إجمالي ضريبة القيمة المضافة</div>
+                        <div class="stat-value" id="totalVAT">0.00 ريال</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"></div>
+                    <div class="stat-info">
+                        <div class="stat-label">إجمالي المبلغ</div>
+                        <div class="stat-value" id="totalAmount">0.00 ريال</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منطقة رفع الصور -->
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+                    <div class="upload-content">
+                        <div class="upload-icon">📸</div>
+                        <h3>اسحب الصورة هنا أو اضغط للاختيار</h3>
+                        <p>يدعم: JPG, PNG, PDF</p>
+                        <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                            <span>اختر الصور</span>
+                            <span class="icon">📁</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قائمة الفواتير -->
+            <div class="invoices-container">
+                <div class="invoices-header">
+                    <h3>📋 الفواتير المرفوعة</h3>
+                    <button class="clear-btn" onclick="clearAllInvoices()">
+                        <span>مسح الكل</span>
+                        <span class="icon">🗑️</span>
+                    </button>
+                </div>
+                <div class="invoices-list" id="invoicesList">
+                    <div class="empty-state">
+                        <div class="empty-icon">📭</div>
+                        <p>لا توجد فواتير بعد</p>
+                        <small>ابدأ برفع أول فاتورة</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- زر التصدير -->
+            <div class="export-section">
+                <button class="export-btn" onclick="exportReport()">
+                    <span>تصدير التقرير</span>
+                    <span class="icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="script.js"></script>
+</body>
+</html>
